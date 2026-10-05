@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>8 Years of Memories</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #0f0b0d;
+            color: #f8eeee;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            background:
+                radial-gradient(circle at top, rgba(150, 60, 80, 0.35), transparent 45%),
+                linear-gradient(145deg, #160d11, #080608);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeUp 1.5s ease;
+        }
+
+        .small-title {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 12px;
+            color: #d9a6b1;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            font-weight: 400;
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: #d8c8cc;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .date {
+            margin-top: 35px;
+            font-family: Arial, sans-serif;
+            letter-spacing: 3px;
+            color: #d9a6b1;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #aa969b;
+        }
+
+        /* INTRO */
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            padding: 120px 25px 90px;
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            color: #c88d9b;
+            margin-bottom: 20px;
+        }
+
+        .intro h2 {
+            font-size: clamp(35px, 6vw, 60px);
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            color: #cfc1c5;
+            font-family: Arial, sans-serif;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        /* FEATURE PHOTO */
+
+        .feature {
+            width: min(1100px, 90%);
+            margin: 0 auto 120px;
+        }
+
+        .feature img {
+            width: 100%;
+            max-height: 750px;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+
+        /* GALLERY */
+
+        .gallery-section {
+            padding: 80px 5% 120px;
+            background: #140e11;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .gallery-title h2 {
+            font-size: clamp(35px, 6vw, 60px);
+            font-weight: 400;
+        }
+
+        .gallery {
+            max-width: 1200px;
+            margin: auto;
+            columns: 3 280px;
+            column-gap: 18px;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #21171b;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        /* MESSAGE */
+
+        .message {
+            max-width: 800px;
+            margin: auto;
+            padding: 130px 25px;
+            text-align: center;
+        }
+
+        .message h2 {
+            font-size: clamp(35px, 6vw, 60px);
+            font-weight: 400;
+            margin-bottom: 35px;
+        }
+
+        .message p {
+            font-family: Arial, sans-serif;
+            color: #d5c6ca;
+            line-height: 2;
+            font-size: 16px;
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: #d9a6b1;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #2c2024;
+            color: #8e7c81;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            .hero {
+                min-height: 90vh;
+            }
+
+            .gallery {
+                columns: 2 160px;
+            }
+
+            .intro,
+            .message {
+                padding-top: 90px;
+                padding-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .gallery {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="small-title">
+                A collection of memories
+            </div>
+
+            <h1>8 Years</h1>
+
+            <p>
+                Eight years of memories, laughter, moments and everything
+                that made the journey special.
+            </p>
+
+            <div class="date">
+                06.10.2018 — 06.10.2026
+            </div>
+
+        </div>
+
+        <div class="scroll">
+            SCROLL TO EXPLORE
+        </div>
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+        <div class="section-label">
+               ∞ 
+            Eight years
+        </div>
+
+        <h2>Some moments deserve to stay forever.</h2>
+
+        <p>
+           Eight beautiful years, countless memories, endless laughter, a few tears, and so many moments that shaped us into who we are today. From our first conversation on Instagram to everything we’ve experienced together since, our journey has grown far beyond just a relationship. We’ve changed, learned, struggled, grown, and still found our way back to each other. Here’s to all the places we’ve been, all the memories we’ve made, and all the beautiful moments still waiting for us. ❤️
+        </p>
+
+    </section>
+
+
+    <!-- FEATURE PHOTO -->
+
+    <section class="feature">
+
+        <img
+            src="images/photo10.png"
+            alt="A special memory"
+        >
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery-section">
+
+        <div class="gallery-title">
+
+            <div class="section-label">
+                The memories
+            </div>
+
+            <h2>Captured moments</h2>
+
+        </div>
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="images/photo1.png" alt="Memory 1">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/photo2.png" alt="Memory 2">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/photo3.png" alt="Memory 3">
+            </div>
+
+    </section>
+
+
+    <!-- MESSAGE -->
+
+    <section class="message">
+
+        <div class="section-label">
+            A little note
+        </div>
+
+        <h2>To many more memories.</h2>
+
+        <p>
+            Eight years is a lot of days, but somehow there are still
+            countless memories left to make. Here's to every laugh,
+            every adventure, every ordinary day that became memorable,
+            and everything still waiting ahead.
+        </p>
+
+        <div class="signature">
+            With love ❤️
+        </div>
+
+    </section>
+
+
+    <footer>
+        MADE WITH MEMORIES · 2018 — 2026
+    </footer>
+
+
+</body>
+</html>
